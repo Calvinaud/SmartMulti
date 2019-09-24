@@ -33,12 +33,13 @@ Notre super multiprise peut gérer le cas où des appareils ayant toujours besoi
 ## Gantt v1
 Sprint 1
 - Assemblage
+- Récupérer le niveau de la batterie d'un terminal
 - Mise en place d’une stratégie de charge basée seulement sur courant total
 (dans le but de ne pas dépasser la capacité de la multiprise)
 
 Sprint 2
 - Mise en place du serveur web
-- Récupération du niveau de la batterie (redondance avec web serveur ?)
+- Récupération du niveau de la batterie sur plusieurs terminaux (redondance avec web serveur ?)
 - Mise en place de stratégies de charge basées sur le niveau de batterie
 
 Sprint 3
@@ -55,5 +56,5 @@ Les objectifs du premier sprint seront de:
 - Configurer la Raspberry avec Node Red
 - Définir plus en détails les capteurs à commandé (Ampère-mètres etc.)
 - Pouvoir contrôller le démarrage d'une prise
-- Recolter une informations sur la charges des terminaux (sans forcément l'utiliser)
+- Recolter une informations sur la charges d'un terminal (sans forcément l'utiliser)
 - Mettre en place une stratégie basique de contrôle de la multiprise (limité le nombre de terminaux à 2 sur une multiprise avec 3 prises)
