@@ -1,1 +1,59 @@
 # SmartMulti
+
+## Scénario:
+
+Dans un espace de coworking (ou des amphis d’une certaine école) le nombres d’appareils et souvent limités par rapport aux nombres de prises disponibles. Il existe la solution des multiprises mais avec cette solution il est possible de connecter qu’un nombre limité d’ordinateur portables sans risque pour le réseau électrique.
+
+Notre objet connecté pourra répondre à ce problème en permettant de brancher un plus grand nombre d’ordinateurs sur la même prise. En effet, notre multiprise intelligente va permettre d’équilibrer le chargement de plus de 15 ordinateurs en fournissant ou non selon le niveau de chargement des différents appareils branchés.
+
+Notre super multiprise peut gérer le cas où des appareils ayant toujours besoin de courant puissent être branché. On ne voudrait pas d’une lampe qui n’est pas allumable en permanence. Ceci n’est pas un problème car à travers une interface administrateur la direction du coworking peut paramètres la multiprise pour que certaines prises ne soit pas intégrées dans l’équilibrage. 
+
+## Services:
+- Balancement du chargements des terminaux
+- Suivis de la consommation de chaque utilisateur
+- Mise en place d'exception
+- Mise en place de stratégies dynamiques de chargements basées sur le niveau de charge actuel
+- Recuperation d'information sur la batterie
+
+## Architecture matérielle
+### Liste du type de matériel envisagé:
+- Raspberry PI : Intérêt de NodeRed
+- Télérupteurs 5V
+- Convertisseur 220V vers 5V Continu
+- Connecteur USB
+- Ampère-mètres
+
+### Schéma
+
+
+## Architecture Logicielle
+### Schéma
+![alt text](/Schéma_architecture_logicielle.PNG "Schema Architecture Logicielle")
+
+## Gantt v1
+Sprint 1
+- Assemblage
+- Mise en place d’une stratégie de charge basée seulement sur courant total
+(dans le but de ne pas dépasser la capacité de la multiprise)
+
+Sprint 2
+- Mise en place du serveur web
+- Récupération du niveau de la batterie (redondance avec web serveur ?)
+- Mise en place de stratégies de charge basées sur le niveau de batterie
+
+Sprint 3
+- Mise en place de la base de données Firebase
+- Mise en place du serveur gérant les multiprises dans une entreprise/organisation
+- Mise en place de stratégies de charge basés sur le niveau de batterie  (2) (estimation de la vitesse de charge à partir du courant consommé)
+
+Sprint 4
+- Suivis de la consommation de chaque utilisateur ⇒ facturation
+
+## Objectifs du premier sprint
+
+Les objectifs du premier sprint seront de:
+- Configurer la Raspberry avec Node Red
+- Définir plus en détails les capteurs à commandé (Ampère-mètres etc.)
+- Pouvoir contrôller le démarrage d'une prise
+- Recolter une informations sur la charges des terminaux (sans forcément l'utiliser)
+- Mettre en place une stratégie basique de contrôle de la multiprise (limité le nombre de terminaux à 2 sur une multiprise avec 3 prises)
