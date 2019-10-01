@@ -32,7 +32,7 @@ Notre super multiprise peut gérer le cas où des appareils ayant toujours besoi
 - Ampère-mètres
 
 ### Schéma
-
+![alt text](/Archi_Mat _Smarmulti.png "Schema Architecture Matérielle")
 
 ## Architecture Logicielle
 ### Schéma
