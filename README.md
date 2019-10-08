@@ -12,10 +12,10 @@ Notre super multiprise peut gérer le cas où des appareils ayant toujours besoi
 - Balancement du chargements des terminaux
 - Suivis de la consommation de chaque utilisateur
 - Mise en place d'exception
-- Mise en place de stratégies dynamiques de chargements basées sur le niveau de charge actuel
 - Recuperation d'information sur la batterie
 
 ## Services d'orchestration :
+- Mise en place de stratégies dynamiques de chargements basées sur le niveau de charge actuel
 - Connaître la consommation des utilisateurs de la multiprise pour pouvoir facturer la consommation et établir des statistiques
 - Éteindre les multiprises à partir d’une heure donné et selon les jours d’ouverture de l’espace récupéré via un google Agenda
 - Gérer la puissance globale déployée par l'ensemble des SmartStrips dans un même système éléctrique
