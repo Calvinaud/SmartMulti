@@ -1,6 +1,8 @@
-const express = require("express");
+require("./calendar").then(r => r.listEvents()).catch(reason => console.log(reason));
 
+const express = require("express");
 const app = express()
+
 
 app.get("/", (req, res) => res.send("Hello there"));
 
