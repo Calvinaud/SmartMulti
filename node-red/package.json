@@ -1,0 +1,12 @@
+{
+  "name": "node-red",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "node-red": "^1.0.1"
+  }
+}
