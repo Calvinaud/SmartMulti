@@ -3,10 +3,9 @@ const path = require('path');
 
 const readline = require('readline');
 const {google} = require('googleapis');
+const {getArrivalAndDeparture} = require("./event-utils");
 
 let oAuth2Client_ = null;
-
-
 
 // If modifying these scopes, delete token.json.
 const SCOPES = ['https://www.googleapis.com/auth/calendar.readonly'];
@@ -84,25 +83,23 @@ function listEvents({maxResults = 10, auth = oAuth2Client_} = {}) {
     }
 
     const calendar = google.calendar({version: 'v3', auth});
-    calendar.events.list({
-        calendarId: 'primary',
-        timeMin: (new Date()).toISOString(),
-        maxResults: maxResults,
-        singleEvents: true,
-        orderBy: 'startTime',
-    }, (err, res) => {
-        if (err) return console.log('The API returned an error: ' + err);
-        const events = res.data.items;
-        if (events.length) {
-        console.log('Upcoming ' + maxResults + ' events:');
-        events.map((event, i) => {
-            const start = event.start.dateTime || event.start.date;
-            console.log(`${start} - ${event.summary}`);
-        });
-        } else {
-        console.log('No upcoming events found.');
-        }
-  });
+
+    return new Promise((resolve, reject) => {
+        calendar.events.list({
+            calendarId: 'primary',
+            timeMin: (new Date()).toISOString(),
+            maxResults: maxResults,
+            singleEvents: true,
+            orderBy: 'startTime',
+      }, (err, res) => {
+          if (err) {
+            reject('The API returned an error: ' + err);
+          }
+          resolve(res.data.items); //events
+    });
+
+  })
+
 }
 
 
@@ -118,5 +115,8 @@ module.exports = new Promise((resolve, reject) => {
         authenticate(parsedContent, resolve, reject);
     })
 }).then(() => {
-    return {listEvents};
+    return {
+      listEvents,
+      getArrivalAndDeparture: (roomId = 0) => getArrivalAndDeparture(listEvents, roomId)
+    };
 })
