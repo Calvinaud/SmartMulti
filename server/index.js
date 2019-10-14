@@ -3,10 +3,17 @@ require("./calendar").then(r => r.listEvents()).catch(reason => console.log(reas
 const express = require("express");
 const app = express()
 
+/* ======== ENDPOINTS ======== */
+
 
 app.get("/", (req, res) => res.send("Hello there"));
 
 
-app.listen(8000, () => {
+/* ======== START ======== */
+
+
+const server = app.listen(8000, () => {
     console.log("listening on port 8000")
+    require("./socket").init(server);
+    console.log("-".repeat(40))
 });
