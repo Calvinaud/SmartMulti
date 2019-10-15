@@ -5,8 +5,18 @@ let wsServer;
 /** @type {SocketIO.Server} */
 let io;
 
+/**
+ * @typedef WebSocketMessage
+ * @property {string} type
+ * @property {string} utf8Data
+ * @property {Buffer} binaryData
+ * 
+ */
 
-module.exports.initWebSocket = function(server){
+/**
+ * @param {(connection: any, msg: WebSocketMessage) => void} messageCallback
+ */
+module.exports.initWebSocket = function(server, messageCallback){
     wsServer = new WebSocketServer({
         httpServer: server, 
         autoAcceptConnections: false
@@ -14,19 +24,16 @@ module.exports.initWebSocket = function(server){
     console.log("web socket listening");
 
     wsServer.on('request', function(request) {
-        console.log(request);
         const connection = request.accept();
-        console.log("web socket connection accepted", connection.socket.address);
-        connection.on('message', function(message) {
-            if (message.type === 'utf8') {
-                console.log('Received Message: ' + message.utf8Data);
-                connection.sendUTF("hello");
-            }
-            else if (message.type === 'binary') {
-                console.log('Received Binary Message of ' + message.binaryData.length + ' bytes');
-                connection.sendBytes(message.binaryData);
-            }
-        });
+        const address = connection.socket.address();
+
+        console.log("web socket connection accepted", address);
+        connection.on('close', () => {
+            console.log("web socket connection closed", address);
+        })
+
+        connection.on('message', (message) => messageCallback(connection, message));
+        
     });
 }
 

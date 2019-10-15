@@ -38,7 +38,7 @@ require("./calendar")
 
         const server = app.listen(8000, () => {
             console.log("listening on port 8000")
-            require("./socket").initWebSocket(server);
+            //require("./socket").initWebSocket(server);
             console.log("-".repeat(40))
         });
 
