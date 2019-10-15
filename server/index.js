@@ -1,10 +1,31 @@
 const express = require("express");
 const app = express()
+const request = require('request')
 
 
 
 require("./calendar")
 .then((calendar) => {
+	
+	    /* ======== FOR DEMO ONLY ======== */
+	
+		app.get("/fake-push-end/", (req, res) => {
+			console.log("Fake Push Starting");
+			
+			request.post('http://192.168.99.100:1880/calendar', {
+			  json: calendar.getArrivalAndDeparture(0)
+			}, (error, response, body) => {
+			  if (error) {
+				console.error(error)
+				return
+			  }
+			  res.sendStatus(200)
+			  console.log(`statusCode: ${response.statusCode}`)
+			  console.log(body)
+			})
+		
+		});
+	
         /* ======== ENDPOINTS ======== */
 
         app.get("/rooms/:room_id", (req, res) => {
@@ -13,7 +34,6 @@ require("./calendar")
             calendar.getArrivalAndDeparture(room_id)
             .then(r => res.json(r))
         });
-            
 
         /* ======== START ======== */
 
