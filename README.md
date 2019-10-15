@@ -25,7 +25,7 @@ Dans les hôtels (surtout dans les hôtels hauts de gammes) les chambres intègr
 
 
 ### Schéma
-![alt text](/Archi_Mat_Smarmulti.png "Schema Architecture Matérielle")
+![alt text](/ArchiMatCoordinator.png "Schema Architecture Matérielle")
 
 ## Architecture Logicielle
 ### Schéma
