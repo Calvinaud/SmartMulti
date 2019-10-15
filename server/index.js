@@ -1,8 +1,6 @@
 const express = require("express");
 const app = express()
 
-
-
 require("./calendar")
 .then((calendar) => {
         /* ======== ENDPOINTS ======== */
@@ -20,7 +18,7 @@ require("./calendar")
 
         const server = app.listen(8000, () => {
             console.log("listening on port 8000")
-            require("./socket").init(server);
+            require("./socket").initWebSocket(server);
             console.log("-".repeat(40))
         });
 
