@@ -1,35 +1,28 @@
-# SmartMulti
+# Hoteley
+
+Dans les hôtels (surtout dans les hôtels hauts de gammes) les chambres intègrent de plus en plus d’objets connectés (lumière, chauffage/clim, volet, parfumeur etc.) mais les objets connectés ont parfois beaucoup de protocoles de communications différents ce qui rend compliqué leur intégration. Notre projet résout ce problème en servant de passerelle à tous ces objets connectés et permettre de facilement les utiliser par nos services. De plus, avec une box par chambre chaque client peut lui même gérer sa chambre comme il le veut. Enfin, les boxs s'intègrent dans un réseau à plus grand échelle pour encore mieux servir les clients 
 
 ## Scénario:
 
-Dans un espace de coworking (ou des amphis d’une certaine école) le nombres d’appareils et souvent limités par rapport aux nombres de prises disponibles. Il existe la solution des multiprises mais avec cette solution il est possible de connecter qu’un nombre limité d’ordinateur portables sans risque pour le réseau électrique.
-
-Notre objet connecté pourra répondre à ce problème en permettant de brancher un plus grand nombre d’ordinateurs sur la même prise. En effet, notre multiprise intelligente va permettre d’équilibrer le chargement de plus de 15 ordinateurs en fournissant ou non selon le niveau de chargement des différents appareils branchés.
-
-Notre super multiprise peut gérer le cas où des appareils ayant toujours besoin de courant puissent être branché. On ne voudrait pas d’une lampe qui n’est pas allumable en permanence. Ceci n’est pas un problème car à travers une interface administrateur la direction du coworking peut paramètres la multiprise pour que certaines prises ne soit pas intégrées dans l’équilibrage. 
+???????????
 
 ## Services de l'objet:
-- Balancement du chargements des terminaux
-- Suivis de la consommation de chaque utilisateur
-- Mise en place d'exception
-- Recuperation d'information sur la batterie
+- Communiquer avec des objets connectés déjà existant
+- Pouvoir communiquer avec l’utilisateurs avec des messages vocaux/notifier en changeant la couleur de la box.
+- Permettre au client de configurer des routines de réveil par exemple (ouverture progressive des volets, musique, …)
+- Pouvoir se connecter à la box avec son téléphone et s’en servir de télécommande pour contrôler sa chambre.
 
 ## Services d'orchestration :
-- Mise en place de stratégies dynamiques de chargements basées sur le niveau de charge actuel
-- Connaître la consommation des utilisateurs de la multiprise pour pouvoir facturer la consommation et établir des statistiques
-- Éteindre les multiprises à partir d’une heure donné et selon les jours d’ouverture de l’espace récupéré via un google Agenda
-- Gérer la puissance globale déployée par l'ensemble des SmartStrips dans un même système éléctrique
-- Pouvoir mettre en place des stratégies d’optimisation énergétique (pouvoir plus consommé en heures creuses et moins en heures pleines) pour plus de rentabilité
-- Permettre à l’utilisateur de placer une limite de consommation et le tenir informé de sa progression vers cette limite
-- Permette à l’utilisateur de voir sa consommation électrique à travers différentes période de temps (par jour, ma semaine etc.)
+- Pouvoir ajouter des modules pour intégrer des nouveaux objets à l’ensemble des box
+- Pouvoir envoyer des messages mails et vocaux à une chambre (Employés →  Client)
+- Activer une routine pour accueillir les nouveaux arrivants en checkant l’agenda de l’hôtel (rafraîchir la chambre/lancer un parfum particulier) 
+- Savoir quelles chambre sont vides pour que les femmes de ménages puissent travailler sans déranger les clients
+- Gérer les accès aux différentes boxs pour que chaque box puisse exclusivement être utilisée par les usagers de la chambres (et le personnel)
+- Pouvoir tenir au courant l’ensemble des clients quand un événement commence via la communication vocale
 
 ## Architecture matérielle
 ### Liste du type de matériel envisagé:
-- Raspberry PI : Intérêt de NodeRed
-- Télérupteurs 5V
-- Convertisseur 220V vers 5V Continu
-- Connecteur USB
-- Ampère-mètres
+
 
 ### Schéma
 ![alt text](/Archi_Mat_Smarmulti.png "Schema Architecture Matérielle")
