@@ -1,4 +1,4 @@
-# Hoteley
+# Ambiant Home System
 
 Dans les hôtels (surtout dans les hôtels hauts de gammes) les chambres intègrent de plus en plus d’objets connectés (lumière, chauffage/clim, volet, parfumeur etc.) mais les objets connectés ont parfois beaucoup de protocoles de communications différents ce qui rend compliqué leur intégration. Notre projet résout ce problème en servant de passerelle à tous ces objets connectés et permettre de facilement les utiliser par nos services. De plus, les boxs s'intègrent dans un réseau à plus grand échelle pour encore mieux servir les clients. Enfin,  avec une box par chambre chaque client peut lui même gérer sa chambre comme il le veut.
 
