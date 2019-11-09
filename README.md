@@ -1,27 +1,23 @@
-# Ambiant Home System
+# Ambiance Box
 
-Dans les hôtels (surtout dans les hôtels hauts de gammes) les chambres intègrent de plus en plus d’objets connectés (lumière, chauffage/clim, volet, parfumeur etc.) mais les objets connectés ont parfois beaucoup de protocoles de communications différents ce qui rend compliqué leur intégration. Notre projet résout ce problème en servant de passerelle à tous ces objets connectés et permettre de facilement les utiliser par nos services. De plus, les boxs s'intègrent dans un réseau à plus grand échelle pour encore mieux servir les clients. Enfin,  avec une box par chambre chaque client peut lui même gérer sa chambre comme il le veut.
+On se rend compte aujourd’hui, de plus en plus, que l’environnement dans lequel nous évoluons influence de nombreux aspects de notre vie et de notre bien-être. Cependant, nous n’avons pas toujours le temps, l’envie ou même le réflexe de nous créer un environnement agréable, particulièrement chez nous. D’où l’idée d’Ambiance Box, un objet connecté permettant d’adapter automatiquement l’ambiance, en manipulant des musiques et des lumières, et en se basant sur le différent facteurs.
 
-## Services de l'objet:
-- Communiquer avec des objets connectés déjà existant
-- Pouvoir communiquer avec l’utilisateurs avec des messages vocaux/notifier en changeant la couleur de la box.
-- Permettre au client de configurer des routines de réveil par exemple (ouverture progressive des volets, musique, …)
-- Pouvoir se connecter à la box avec son téléphone et s’en servir de télécommande pour contrôler sa chambre.
 
-## Services d'orchestration :
-- Pouvoir ajouter des modules pour intégrer des nouveaux objets à l’ensemble des box
-- Pouvoir envoyer des messages mails et vocaux à une chambre (Employés →  Client)
-- Activer une routine pour accueillir les nouveaux arrivants en checkant l’agenda de l’hôtel (rafraîchir la chambre/lancer un parfum particulier) 
-- Savoir quelles chambre sont vides pour que les femmes de ménages puissent travailler sans déranger les clients
-- Gérer les accès aux différentes boxs pour que chaque box puisse exclusivement être utilisée par les usagers de la chambres (et le personnel)
-- Pouvoir tenir au courant l’ensemble des clients quand un événement commence via la communication vocale
+## Services
+
+- Proposer une activation intelligente de l'ambiance basée sur la présence ou non de personne dans la pièce
+
+- Déployer une ambiance musicale grâce aux informations relatives à la météo (+ luminosité), à l’heure et à l'événement en cours sur google Calendar
+
+- Mettre une ambiance lumineuse en fonction de la météo (+ luminosité), de l’heure, de la luminosité interne et de l'événement en cours sur google Calendar
+
+- Adapter le volume de l’ambiance musicale en fonction du niveau sonore sans la musique et de l’heure (par exemple éviter le tapage nocturne)
 
 ## Architecture matérielle
 
-### Schéma
-![alt text](/ArchiMatCoordinator.png "Schema Architecture Matérielle")
+![alt text](/ArchiMat.png "Schema Architecture Matérielle")
 
 ## Architecture Logicielle
-![alt text](/ArchiLogicielle.png "Schema Architecture Logicielle")
+![alt text](/ArchiLog.png "Schema Architecture Logicielle")
 
 Membres de l'équipe : Calvin Audier, Aurélien Zintzmeyer, Ali Chaar
