@@ -1,0 +1,198 @@
+[
+    {
+        "id": "6c10edae.7907c4",
+        "type": "tab",
+        "label": "API",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "caf73d11.01243",
+        "type": "spotify",
+        "z": "6c10edae.7907c4",
+        "name": "",
+        "auth": "1ab75329.69ffed",
+        "api": "getMyDevices",
+        "x": 480,
+        "y": 160,
+        "wires": [
+            [
+                "f73ea4cb.9c8c18"
+            ]
+        ]
+    },
+    {
+        "id": "fb836ad9.ea6558",
+        "type": "inject",
+        "z": "6c10edae.7907c4",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 240,
+        "y": 160,
+        "wires": [
+            [
+                "caf73d11.01243"
+            ]
+        ]
+    },
+    {
+        "id": "f73ea4cb.9c8c18",
+        "type": "debug",
+        "z": "6c10edae.7907c4",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 730,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "f6447c98.ec69",
+        "type": "openweathermap",
+        "z": "6c10edae.7907c4",
+        "name": "Current weather",
+        "wtype": "current",
+        "lon": "",
+        "lat": "",
+        "city": "Paris",
+        "country": "France",
+        "language": "fr",
+        "x": 720,
+        "y": 320,
+        "wires": [
+            [
+                "cfa8d75e.e7da48"
+            ]
+        ]
+    },
+    {
+        "id": "c6339ec.dc99b6",
+        "type": "inject",
+        "z": "6c10edae.7907c4",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 320,
+        "y": 320,
+        "wires": [
+            [
+                "b0cfb18.0b3655"
+            ]
+        ]
+    },
+    {
+        "id": "cfa8d75e.e7da48",
+        "type": "debug",
+        "z": "6c10edae.7907c4",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 910,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "b0cfb18.0b3655",
+        "type": "change",
+        "z": "6c10edae.7907c4",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "msg.location.city",
+                "pt": "msg",
+                "to": "Paris",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 320,
+        "wires": [
+            [
+                "f6447c98.ec69"
+            ]
+        ]
+    },
+    {
+        "id": "e282ba08.907f68",
+        "type": "google calendar",
+        "z": "6c10edae.7907c4",
+        "google": "",
+        "name": "",
+        "calendar": "",
+        "ongoing": false,
+        "x": 430,
+        "y": 500,
+        "wires": [
+            [
+                "71793f58.ead59"
+            ]
+        ]
+    },
+    {
+        "id": "a3c8a349.e8f01",
+        "type": "inject",
+        "z": "6c10edae.7907c4",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 260,
+        "y": 500,
+        "wires": [
+            [
+                "e282ba08.907f68"
+            ]
+        ]
+    },
+    {
+        "id": "71793f58.ead59",
+        "type": "debug",
+        "z": "6c10edae.7907c4",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 610,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "1ab75329.69ffed",
+        "type": "spotify-auth",
+        "z": "",
+        "name": "Spotify OAuth2",
+        "scope": "user-read-playback-state\nuser-library-read\n"
+    }
+]
