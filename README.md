@@ -18,6 +18,6 @@ On se rend compte aujourd’hui, de plus en plus, que l’environnement dans leq
 ![alt text](/ArchiMat.png "Schema Architecture Matérielle")
 
 ## Architecture Logicielle
-![alt text](/ArchiLog.png "Schema Architecture Logicielle")
+![alt text](/Architecture%20logicielle.PNG "Schema Architecture Logicielle")
 
 Membres de l'équipe : Calvin Audier, Aurélien Zintzmeyer, Ali Chaar
