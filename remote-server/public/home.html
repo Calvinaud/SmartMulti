@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
     <title>Document</title>
 </head>
 <body>
@@ -13,15 +15,17 @@
         <img src="icon.png"/>
         <h1>Ambiance box</h1>
     </header>
-    
 
     <div>
-        <h2 id=status-title>Box</h2>
-        <div id=status-light class=on></div>
-        <div id=actions>
-            
+        <div id=control>
+                <h2 id=status-title>Box</h2>
+                <div id=status-light class=on></div>
+                <div id=actions>
+                    <button id="toggle-button" onclick="toggleBox()">éteindre/allumer</button>
+                </div>
         </div>
     </div>
+
 
 </body>
 </html>
