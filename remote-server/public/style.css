@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body > div {
+    padding-left: 10px;
+}
+
+body > header {
+    background-color: rgb(124, 235, 124);
+    padding: 10px;
+    box-shadow: 1px 2px 3px rgb(177, 177, 177);
+}
+
+header > h1 {
+    margin: 0;
+    display: inline-block;
+}
+
+header > img {
+    width: 40px;
+    margin-right: 20px;
+    display: inline-block;
+}
+
+#login-form {
+    margin: 20px;
+    padding: 20px;
+    width: 300px;
+    background-color: rgb(164, 164, 236);
+    border-radius: 5px;
+    box-shadow: 1px 2px 3px rgb(177, 177, 177);
+}
+
+#login-form > *  {
+    margin: 7px 0;
+}
+
+#login-form > h2 {
+    font-weight: 200;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#login-form > input {
+    border-radius:5px;
+    border-style: none;
+    padding: 5px;
+    box-shadow: 1px 2px 1px rgb(128, 128, 128);
+}
+
+#login-form > input:focus {
+    box-shadow: 1px 2px 3px rgb(80, 80, 80);
+}
+
+#connect-button {
+    border-radius: 20px;
+    border-style: none;
+    padding: 5px 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+#connect-button:hover {
+    background-color: rgb(255, 210, 189);
+    cursor: pointer;
+}

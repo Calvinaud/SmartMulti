@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <header>
-        <h1>Ambiance box - Connection</h1>
+        <img src="icon.png"/>
+        <h1>Ambiance box</h1>
     </header>
 
-
-    <form method="POST" action="login">
-        <h2>Login</h2>
-        <input name="login" type="text" />
-        <h2>Mot de passe</h2>
-        <input name="pass" type="password" />
-        <br/>
-        <input type="submit" value="connection" />
-    </form>
-
+    <div>
+        <form method="POST" action="login" id="login-form">
+            <h2>Login</h2>
+            <input name="login" type="text" />
+            <h2>Mot de passe</h2>
+            <input name="pass" type="password" />
+            <br/>
+            <button type="submit" id="connect-button">Connection</button>
+        </form>
+    </div>
 </body>
 </html>
