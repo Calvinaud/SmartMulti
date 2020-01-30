@@ -1,3 +1,11 @@
+// ======== SESSION ========
+
+function logOut(){
+  location.href = "index.html"
+}
+
+// ======== ACTIONS ========
+
 const ACTIONS = {
     TOGGLE: 'toggle'
 }
