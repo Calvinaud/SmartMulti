@@ -134,3 +134,11 @@ header > img {
 #actions {
     margin-top: 20px;
 }
+
+#server-down-error.notvisible {
+    display: none;
+}
+
+#server-error.notvisible {
+    display: none;
+}
