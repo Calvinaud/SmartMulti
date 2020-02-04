@@ -1,0 +1,2 @@
+Ne pas oublier d'export la variable lors de la config server
+export GOOGLE_APPLICATION_CREDENTIALS="./service-account-file.json"
