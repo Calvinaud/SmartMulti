@@ -8,6 +8,6 @@ RUN npm install
 COPY . .
 EXPOSE 8000
 
-ENV GOOGLE_APPLICATION_CREDENTIALS="./service-account-file.json"
+#ENV GOOGLE_APPLICATION_CREDENTIALS="./service-account-file.json"
 
 CMD [ "node", "index.js" ]

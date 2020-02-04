@@ -1,5 +1,5 @@
 const mqtt = require('mqtt')
-const client = mqtt.connect('mqtt://localhost:1883')
+const client = mqtt.connect('mqtt://34.76.135.146:1885')
 
 const REMOTE_ACTION_TOPIC = 'remote_action';
 
