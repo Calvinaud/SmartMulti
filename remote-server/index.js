@@ -4,6 +4,14 @@ const {publish} = require('./mqtt');
 const PORT = 8000;
 
 
+var admin = require("firebase-admin");
+
+var serviceAccount = require("./ambiance-box-8d3a2-firebase-adminsdk-lchvn-6d229972f8.json");
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://ambiance-box-8d3a2.firebaseio.com"
+});
 
 
 const app = express()
