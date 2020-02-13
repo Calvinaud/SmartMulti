@@ -1,0 +1,14 @@
+sudo wget -q -O - https://apt.mopidy.com/mopidy.gpg | sudo apt-key add -
+sudo wget -q -O /etc/apt/sources.list.d/mopidy.list https://apt.mopidy.com/stretch.list
+sudo apt-get update
+sudo apt-get install mopidy
+
+sudo pip install Mopidy-SoundCloud
+sudo pip install Mopidy-MusicBox-Webclient
+
+
+#wsl
+#pip install sphinx_rtd_theme
+
+
+#https://docs.mopidy.com/en/release-1.1/ext/mpd/
