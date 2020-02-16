@@ -5,7 +5,6 @@ function logOut(){
 }
 
 // ======== ACTIONS ========
-
 const ACTIONS = {
     TOGGLE: 'toggle'
 }

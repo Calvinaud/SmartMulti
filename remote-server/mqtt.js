@@ -1,14 +1,16 @@
 const mqtt = require('mqtt')
 const client = mqtt.connect('mqtt://34.76.135.146:1885')
 
-const REMOTE_ACTION_TOPIC = 'remote_action';
-
+const ID_TOPIC = 'serv/';
+const FROM_SERV = 'from_serv/';
+const FROM_CONTROLLER = 'from_controler/';
+const SEND_TOPIC = '/test'
 
 client.on('connect', function () {
 
-    client.subscribe(REMOTE_ACTION_TOPIC, function (err) {
+    client.subscribe(ID_TOPIC+SEND_TOPIC+"hello", function (err) {
         if (!err) {
-        client.publish(REMOTE_ACTION_TOPIC, 'Hello mqtt')
+			client.publish(ID_TOPIC+SEND_TOPIC+"hello", 'Hello mqtt')
         }
     })
 })
@@ -29,12 +31,11 @@ async function publish(str){
       reject(error);
     })
 
-    client.publish(REMOTE_ACTION_TOPIC, str);
+    client.publish(ID_TOPIC+SEND_TOPIC+"", str);
     setTimeout(() => resolve('ok'), 10)
   });
 
   return res;
-
 }
 
 module.exports = {publish};
