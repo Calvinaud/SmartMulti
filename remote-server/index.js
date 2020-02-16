@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const {publish} = require('./mqtt');
-const PORT = 8000;
+const PORT = 80;
 /*
 var admin = require("firebase-admin");
 
