@@ -18,7 +18,7 @@ app.use(bodyParser.json({ type: 'application/*+json' }))
 app.use(express.static('public'))
 
 app.post('/login', (req, res) => {
-    res.redirect('/home.html')
+    res.redirect('/login.html')
 })
 
 app.post('/toggle', async (req, res) => {
