@@ -17,24 +17,31 @@ const ACTIONS = {
     TOGGLE: 'toggle'
 }
 
-function toggleBox(){
-    console.log('toggle')
+async function changeLocation(){
+	console.log("Send location");
+		
+	var city = document.getElementById("city").value;
+	var country = document.getElementById("country").value;
+	
+	var autre = '{country: '+country+', city: '+city+'}';
+	setTimeout(() => {
+        sendAction(city, country);
+    }, 2000);
 
-
-    setTimeout(() => {
-        sendAction(ACTIONS.TOGGLE);
-        document.getElementById("status-light").classList.toggle('on')
-    }, 1000)
 }
-
-async function sendAction(action){
-
-    const resp = await fetch(action, {
+async function sendAction(newCity, newCountry){
+	
+	var json = {};
+	json["country"] = newCountry;
+	json["city"] = newCity;
+	
+	
+	const resp = await fetch('weather', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({})
+      body: JSON.stringify(json)
     });
 
     console.log(await resp.text());

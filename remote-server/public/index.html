@@ -18,14 +18,12 @@
 	<div class="g-signin2" data-onsuccess="onSignIn"></div>
 
     <div>
-        <form method="POST" action="weather" id="login-form">
             <h2>Country</h2>
-            <input name="country" type="text" />
+            <input id="country" type="text" />
             <h2>City</h2>
-            <input name="city" type="text" />
+            <input id="city" type="text" />
             <br/>
-            <button type="submit" id="connect-button">Connexion</button>
-        </form>
+            <button onclick="changeLocation()" id="connect-button">Change location</button>
     </div>
 </body>
 </html>
