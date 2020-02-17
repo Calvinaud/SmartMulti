@@ -23,7 +23,7 @@ function toggleBox(){
 
     setTimeout(() => {
         sendAction(ACTIONS.TOGGLE);
-        document.getElementById("status-light") .classList.toggle('on')
+        document.getElementById("status-light").classList.toggle('on')
     }, 1000)
 }
 

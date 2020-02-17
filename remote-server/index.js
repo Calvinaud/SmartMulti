@@ -17,12 +17,9 @@ app.use(bodyParser.json({ type: 'application/*+json' }))
 
 app.use(express.static('public'))
 
-app.post('/login', (req, res) => {
-    res.redirect('/login.html')
-})
-
-app.post('/toggle', async (req, res) => {
-    const r = publish('toggle');
+app.post('/weather', (req, res) => {
+	console.log(req);
+    const r = publish('country', 'weather');
     if(typeof r == 'string'){
         res.sendStatus(200);
     } else {
@@ -30,13 +27,14 @@ app.post('/toggle', async (req, res) => {
     }
 })
 
-function onSignIn(googleUser) {
-  var profile = googleUser.getBasicProfile();
-  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  console.log('Name: ' + profile.getName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-}
+app.post('/toggle', async (req, res) => {
+    const r = publish('toggle', 'toggle');
+    if(typeof r == 'string'){
+        res.sendStatus(200);
+    } else {
+        res.sendStatus(500).json(r.message)
+    }
+})
 
 app.listen(PORT, () => {
     console.log('listening on port ' + PORT)
