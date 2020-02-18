@@ -13,13 +13,16 @@ app.use(express.static('public'))
 app.post('/weather', async (req, res) => {
 	
 	console.log(JSON.stringify(req.body));
-	
     const r = publish(JSON.stringify(req.body), 'weather');
+	console.log(r);   
+    res.sendStatus(200);
+})
 
-
-	console.log(r);
-   
-   
+app.post('/calendar', async (req, res) => {
+	
+	console.log(JSON.stringify(req.body));
+    const r = publish(JSON.stringify(req.body), 'calendar');
+	console.log(r); 
     res.sendStatus(200);
 })
 
